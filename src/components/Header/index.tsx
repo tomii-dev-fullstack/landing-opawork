@@ -15,14 +15,17 @@ import {
   Outline,
   Span,
 } from "./styles";
+import { useNavigate } from "react-router";
 
 const Header = ({ t }: { t: TFunction }) => {
   const [visible, setVisibility] = useState(false);
-
+  const nv = useNavigate()
   const toggleButton = () => {
     setVisibility(!visible);
   };
-
+  const handleGoToSignIn = () => {
+    window.location.href = "http://localhost:5174"
+  }
   const MenuItem = () => {
     const scrollTo = (id: string) => {
       const element = document.getElementById(id) as HTMLDivElement;
@@ -33,21 +36,22 @@ const Header = ({ t }: { t: TFunction }) => {
     };
     return (
       <>
-        <CustomNavLinkSmall onClick={() => scrollTo("about")}>
-          <Span>{t("About")}</Span>
-        </CustomNavLinkSmall>
-        <CustomNavLinkSmall onClick={() => scrollTo("mission")}>
-          <Span>{t("Mission")}</Span>
-        </CustomNavLinkSmall>
-        <CustomNavLinkSmall onClick={() => scrollTo("product")}>
-          <Span>{t("Product")}</Span>
-        </CustomNavLinkSmall>
+        {/*   <CustomNavLinkSmall onClick={() => scrollTo("about")}>
+          <Span>{t("Buscar profesionales")}</Span>
+        </CustomNavLinkSmall> */}
+        {/*  <CustomNavLinkSmall onClick={() => scrollTo("mission")}>
+          <Span>{t("Buscar avisos")}</Span>
+        </CustomNavLinkSmall> */}
+        <CustomNavLinkSmall onClick={() => alert("Ir a inicio de sesion de freelance")} >
+          {/*   <CustomNavLinkSmall onClick={() => scrollTo("product")}> */}
+          < Span > {t("Busco trabajos")}</Span >
+        </CustomNavLinkSmall >
         <CustomNavLinkSmall
           style={{ width: "180px" }}
           onClick={() => scrollTo("contact")}
         >
           <Span>
-            <Button>{t("Contact")}</Button>
+            <Button onClick={handleGoToSignIn}>{t("Busco profesionales")}</Button>
           </Span>
         </CustomNavLinkSmall>
       </>
@@ -58,8 +62,10 @@ const Header = ({ t }: { t: TFunction }) => {
     <HeaderSection>
       <Container>
         <Row justify="space-between">
-          <LogoContainer to="/" aria-label="homepage">
-            <SvgIcon src="logo.svg" width="101px" height="64px" />
+          <LogoContainer href="/" aria-label="homepage">
+
+            <SvgIcon src="logo.png" width={"100%"} height={"50"} />
+            {/*  <SvgIcon src="logo.png" width="101px" height="64px" />  */}
           </LogoContainer>
           <NotHidden>
             <MenuItem />
@@ -72,7 +78,7 @@ const Header = ({ t }: { t: TFunction }) => {
           <Col style={{ marginBottom: "2.5rem" }}>
             <Label onClick={toggleButton}>
               <Col span={12}>
-                <Menu>Menu</Menu>
+                {/*   <Menu>Menu</Menu> */}
               </Col>
               <Col span={12}>
                 <Outline />

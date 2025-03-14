@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 
 export const FooterSection = styled("footer")`
   background: rgb(241, 242, 243);

@@ -1,17 +1,20 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+/* import { Link } from "react-router-dom"; */
 import { MenuOutlined } from "@ant-design/icons";
 
 export const HeaderSection = styled("header")`
   padding: 1rem 0.5rem;
-
+  position:fixed;
+  width:100%;
+  z-index:99;
+  background-color:#fff;
   .ant-row-space-between {
     align-items: center;
     text-align: center;
   }
 `;
 
-export const LogoContainer = styled(Link)`
+export const LogoContainer = styled("a")`
   display: flex;
 `;
 
@@ -88,8 +91,9 @@ export const Span = styled("span")`
   &:hover,
   &:active,
   &:focus {
-    color: rgb(255, 130, 92);
+    color: rgb(198, 175, 0);
     text-underline-position: under;
-    text-decoration: rgb(255, 130, 92) wavy underline;
+   
   }
 `;
+/* text-decoration: rgb(255, 130, 92) wavy underline; */
