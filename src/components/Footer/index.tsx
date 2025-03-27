@@ -137,7 +137,7 @@ const Footer = ({ t }: { t: TFunction }) => {
                 src="twitter.svg"
               /> */}
               <SocialLink
-                href="https://www.linkedin.com/in/lasha-kakabadze/"
+                href="https://www.linkedin.com/"
                 src="linkedin.svg"
               />
              {/*  <SocialLink

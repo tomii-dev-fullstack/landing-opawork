@@ -24,7 +24,7 @@ const Header = ({ t }: { t: TFunction }) => {
     setVisibility(!visible);
   };
   const handleGoToSignIn = () => {
-    window.location.href = "http://localhost:5174"
+    window.location.href = "https://auth.opawork.app"
   }
   const MenuItem = () => {
     const scrollTo = (id: string) => {
@@ -42,7 +42,7 @@ const Header = ({ t }: { t: TFunction }) => {
         {/*  <CustomNavLinkSmall onClick={() => scrollTo("mission")}>
           <Span>{t("Buscar avisos")}</Span>
         </CustomNavLinkSmall> */}
-        <CustomNavLinkSmall onClick={() => alert("Ir a inicio de sesion de freelance")} >
+        <CustomNavLinkSmall onClick={handleGoToSignIn} >
           {/*   <CustomNavLinkSmall onClick={() => scrollTo("product")}> */}
           < Span > {t("Busco trabajos")}</Span >
         </CustomNavLinkSmall >
